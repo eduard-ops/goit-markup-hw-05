@@ -602,10 +602,6 @@ a {
   position: relative;
 }
 
-.portfolio-item:hover .portf-overlay {
-  transform: translateY(0);
-}
-
 .portfolio-top-wrapper {
   position: relative;
   overflow: hidden;
@@ -636,6 +632,11 @@ a {
   border-top: none;
 }
 
+.portfolio-link:hover .portf-overlay,
+.portfolio-link:focus .portf-overlay {
+  transform: translateY(0);
+}
+
 .portfolio-title {
   color: var(--primary-text-color);
   font-weight: 700;
@@ -655,7 +656,8 @@ a {
 }
 
 .portfolio-link {
-  transition: box-shadow 250ms ease, background-color 250ms ease;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms ease cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
